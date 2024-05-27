@@ -30,10 +30,10 @@ function modRecovery(rSource, rTarget, rRoll)
 			end
 			rRoll.nMod = rRoll.nMod + nMod;
 		end
-		local tEffects = EffectManager5E.getEffectsByType(rSource, 'HD', {'max'});
+		local tEffects = EffectManager5E.getEffectsByType(rSource, "HD", {"max"});
 		for _,tEffect in pairs(tEffects) do
 			for _,remainder in pairs(tEffect.remainder) do
-				if remainder:lower() == 'max' then
+				if remainder:lower() == "max" then
 					rRoll.sDesc = rRoll.sDesc .. ' [MAX]';
 				end
 			end
@@ -59,7 +59,7 @@ function onRecoveryRoll(rSource, rRoll)
 end
 
 function maxRecovery(rRoll)
-	if rRoll.sDesc:match('%[MAX%]') then
+	if rRoll.sSubtype == 'maxhp' then
 		for _, vDie in ipairs(rRoll.aDice) do
 			local sSign, sColor, sDieSides = vDie.type:match('^([%-%+]?)([dDrRgGbBpP])([%dF]+)');
 			if sDieSides then
