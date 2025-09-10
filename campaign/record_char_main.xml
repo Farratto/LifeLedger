@@ -99,7 +99,7 @@
 			</string_textlistitem>
 
 			<button_toggledetail name="activateDetail">
-				<anchored position="insidetopleft" offset="5,3" />
+				<anchored position="insidetopleft" offset="25,3" />
 			</button_toggledetail>
 
 			<windowlist name="list">
